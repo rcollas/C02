@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcollas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/15 15:49:11 by rcollas           #+#    #+#             */
-/*   Updated: 2021/03/16 07:48:45 by rcollas          ###   ########.fr       */
+/*   Created: 2021/03/16 08:57:48 by rcollas           #+#    #+#             */
+/*   Updated: 2021/03/17 08:19:23 by rcollas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-char	*ft_strcpy(char *dest, char *src)
+int		ft_str_is_alpha(char *str)
 {
 	int i;
 
 	i = -1;
-	while (src[++i])
-		dest[i] = src[i];
-	dest[i] = '\0';
-	return (dest);
+	while (str[++i])
+		if (!((str[i] >= 'a' && str[i] <= 'z')
+		|| (str[i] >= 'A' && str[i] <= 'Z')))
+			return (0);
+	return (1);
 }

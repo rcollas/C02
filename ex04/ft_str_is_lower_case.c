@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_lower_case.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcollas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/15 15:49:11 by rcollas           #+#    #+#             */
-/*   Updated: 2021/03/16 07:48:45 by rcollas          ###   ########.fr       */
+/*   Created: 2021/03/16 09:34:58 by rcollas           #+#    #+#             */
+/*   Updated: 2021/03/16 10:31:47 by rcollas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-char	*ft_strcpy(char *dest, char *src)
+int		ft_str_is_lower_case(char *str)
 {
 	int i;
 
 	i = -1;
-	while (src[++i])
-		dest[i] = src[i];
-	dest[i] = '\0';
-	return (dest);
+	while (str[++i])
+		if (!(str[i] >= 'a' && str[i] <= 'z'))
+			return (0);
+	return (1);
 }

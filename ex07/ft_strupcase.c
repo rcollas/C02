@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcollas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/15 15:49:11 by rcollas           #+#    #+#             */
-/*   Updated: 2021/03/16 07:48:45 by rcollas          ###   ########.fr       */
+/*   Created: 2021/03/16 10:06:54 by rcollas           #+#    #+#             */
+/*   Updated: 2021/03/17 08:58:38 by rcollas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strupcase(char *str)
 {
 	int i;
 
 	i = -1;
-	while (src[++i])
-		dest[i] = src[i];
-	dest[i] = '\0';
-	return (dest);
+	while (str[++i])
+		if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] -= 32;
+	return (str);
 }

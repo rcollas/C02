@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcollas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/15 15:49:11 by rcollas           #+#    #+#             */
-/*   Updated: 2021/03/16 07:48:45 by rcollas          ###   ########.fr       */
+/*   Created: 2021/03/16 10:45:54 by rcollas           #+#    #+#             */
+/*   Updated: 2021/03/16 10:52:25 by rcollas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strlowcase(char *str)
 {
 	int i;
 
 	i = -1;
-	while (src[++i])
-		dest[i] = src[i];
-	dest[i] = '\0';
-	return (dest);
+	while (str[++i])
+		if (str[i] >= 65 && str[i] <= 90)
+			str[i] += 32;
+	return (str);
 }
